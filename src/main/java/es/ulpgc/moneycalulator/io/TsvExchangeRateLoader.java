@@ -1,5 +1,7 @@
 package es.ulpgc.moneycalulator.io;
 
+import es.ulpgc.moneycalulator.controller.ExchangeRateManager;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

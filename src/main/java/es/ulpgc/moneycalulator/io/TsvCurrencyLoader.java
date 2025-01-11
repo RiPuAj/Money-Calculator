@@ -1,5 +1,7 @@
 package es.ulpgc.moneycalulator.io;
 
+import es.ulpgc.moneycalulator.controller.CurrencyManager;
+
 import java.io.*;
 
 public class TsvCurrencyLoader {
