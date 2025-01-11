@@ -1,11 +1,20 @@
-import es.ulpgc.moneycalulator.model.Currency;
+import es.ulpgc.moneycalulator.controller.CurrencyManager;
+import es.ulpgc.moneycalulator.controller.ExchangeRateManager;
+import es.ulpgc.moneycalulator.io.TsvCurrencyLoader;
+import es.ulpgc.moneycalulator.io.TsvExchangeRateLoader;
 
 import java.io.File;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        TsvCurrencyReader tsvCurrencyReader = new TsvCurrencyReader();
-        List<Currency> currencies = tsvCurrencyReader.readFrom(new File("monedas.tsv"));
+        File currencyFile = new File("monedas.tsv");
+        File ExchangeRateFile = new File("exchangeRates.tsv");
+        CurrencyManager currencyManager = new CurrencyManager();
+        ExchangeRateManager exchangeRateManager = new ExchangeRateManager();
+        TsvCurrencyLoader tsvCurrencyLoader = new TsvCurrencyLoader(currencyManager);
+        tsvCurrencyLoader.readFrom(currencyFile);
+        TsvExchangeRateLoader tsvExchangeLoader = new TsvExchangeRateLoader(exchangeRateManager);
+        tsvExchangeLoader.readFrom(ExchangeRateFile);
+
     }
 }
