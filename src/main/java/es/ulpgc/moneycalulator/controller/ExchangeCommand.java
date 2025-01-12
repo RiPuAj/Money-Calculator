@@ -5,11 +5,11 @@ import es.ulpgc.moneycalulator.view.MoneyInput;
 import es.ulpgc.moneycalulator.view.ResultLabel;
 
 public class ExchangeCommand implements Command {
-    private CurrencyDialog currencyFromDialog;
-    private CurrencyDialog currencyToDialog;
-    private ExchangerCurrency exchangerCurrency;
-    private ResultLabel resultLabel;
-    private MoneyInput amountField;
+    private final CurrencyDialog currencyFromDialog;
+    private final CurrencyDialog currencyToDialog;
+    private final ExchangerCurrency exchangerCurrency;
+    private final ResultLabel resultLabel;
+    private final MoneyInput amountField;
 
     public ExchangeCommand(CurrencyDialog currencyFromDialog, CurrencyDialog currencyToDialog, ExchangerCurrency exchangerCurrency, ResultLabel resultLabel, MoneyInput amountField) {
         this.currencyFromDialog = currencyFromDialog;

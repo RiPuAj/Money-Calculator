@@ -47,7 +47,7 @@ public class SwingMain extends JFrame {
     private Component createResultLabel(){
         ResultLabel resultLabel = new ResultLabel();
         this.resultLabel = resultLabel;
-        return (Component) resultLabel;
+        return resultLabel;
     }
 
     private Component calculateButton(){
@@ -59,7 +59,7 @@ public class SwingMain extends JFrame {
     private Component createAmountField(){
         MoneyInput amountField = new MoneyInput();
         this.amountField = amountField;
-        return (Component) amountField;
+        return amountField;
     }
 
     public CurrencyDialog getCurrencyFromDialog() {
@@ -84,7 +84,7 @@ public class SwingMain extends JFrame {
                 getCurrencyToDialog().define(exchangerCurrency.getAllCurrencies()),
                 exchangerCurrency,
                 getResultLabel(),
-                (MoneyInput) getAmountField());
+                getAmountField());
         commands.put("exchange", exchangeCommand);
     }
 }

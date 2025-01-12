@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CurrencyManager {
-    private List<Currency> currencies;
+    private final List<Currency> currencies;
 
     public CurrencyManager() {
         this.currencies = new ArrayList<>();

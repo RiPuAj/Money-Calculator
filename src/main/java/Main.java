@@ -8,7 +8,7 @@ import es.ulpgc.moneycalulator.view.SwingMain;
 import java.io.File;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         CurrencyManager currencyManager = new CurrencyManager();
         TsvCurrencyLoader tsvCurrencyLoader = new TsvCurrencyLoader(currencyManager)
                 .loadFrom(new File("monedas.tsv"));
