@@ -16,7 +16,7 @@ public class TsvExchangeRateLoader {
     }
 
 
-    public void readFrom(File file) {
+    public TsvExchangeRateLoader loadFrom(File file) {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))){
 
             readHeader(reader);
@@ -26,9 +26,11 @@ public class TsvExchangeRateLoader {
                 if (line == null) break;
                 exchangeRateManager.addExchangeRate(line);
             }
+            return this;
 
         } catch (IOException e) {
             //TODO
+            return this;
         }
     }
 

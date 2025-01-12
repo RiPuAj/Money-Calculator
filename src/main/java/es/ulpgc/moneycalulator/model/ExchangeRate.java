@@ -2,4 +2,4 @@ package es.ulpgc.moneycalulator.model;
 
 import java.time.LocalDate;
 
-public record ExchangeRate(Currency from, Currency to, double rate, LocalDate date){}
+public record ExchangeRate(String codeFrom, String codeTo, double rate, LocalDate date){}

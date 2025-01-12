@@ -1,20 +1,27 @@
 import es.ulpgc.moneycalulator.controller.CurrencyManager;
 import es.ulpgc.moneycalulator.controller.ExchangeRateManager;
+import es.ulpgc.moneycalulator.controller.ExchangerCurrency;
 import es.ulpgc.moneycalulator.io.TsvCurrencyLoader;
 import es.ulpgc.moneycalulator.io.TsvExchangeRateLoader;
+import es.ulpgc.moneycalulator.view.SwingMain;
+
 
 import java.io.File;
 
 public class Main {
-    public static void main(String[] args) {
-        File currencyFile = new File("monedas.tsv");
-        File ExchangeRateFile = new File("exchangeRates.tsv");
+    public static void main(String[] args) throws InterruptedException {
         CurrencyManager currencyManager = new CurrencyManager();
+        TsvCurrencyLoader tsvCurrencyLoader = new TsvCurrencyLoader(currencyManager)
+                .loadFrom(new File("monedas.tsv"));
+
         ExchangeRateManager exchangeRateManager = new ExchangeRateManager();
-        TsvCurrencyLoader tsvCurrencyLoader = new TsvCurrencyLoader(currencyManager);
-        tsvCurrencyLoader.readFrom(currencyFile);
-        TsvExchangeRateLoader tsvExchangeLoader = new TsvExchangeRateLoader(exchangeRateManager);
-        tsvExchangeLoader.readFrom(ExchangeRateFile);
+        TsvExchangeRateLoader tsvExchangeLoader = new TsvExchangeRateLoader(exchangeRateManager)
+                .loadFrom(new File("exchangeRates.tsv"));
+
+        ExchangerCurrency exchangerCurrency = new ExchangerCurrency(currencyManager, exchangeRateManager);
+        SwingMain swingMain = new SwingMain(exchangerCurrency);
+        swingMain.setVisible(true);
 
     }
+
 }
