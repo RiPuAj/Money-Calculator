@@ -1,7 +1,7 @@
 package es.ulpgc.moneycalulator.controller;
 
-import es.ulpgc.moneycalulator.view.MoneyInput;
 import es.ulpgc.moneycalulator.view.CurrencyDialog;
+import es.ulpgc.moneycalulator.view.MoneyInput;
 import es.ulpgc.moneycalulator.view.ResultLabel;
 
 public class ExchangeCommand implements Command {

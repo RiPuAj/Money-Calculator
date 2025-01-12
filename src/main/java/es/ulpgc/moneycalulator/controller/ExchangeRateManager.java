@@ -1,13 +1,10 @@
 package es.ulpgc.moneycalulator.controller;
 
-import es.ulpgc.moneycalulator.model.Currency;
 import es.ulpgc.moneycalulator.model.ExchangeRate;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 public class ExchangeRateManager {
     private final List<ExchangeRate> exchangeRates = new ArrayList<>();

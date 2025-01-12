@@ -3,9 +3,7 @@ package es.ulpgc.moneycalulator.controller;
 import es.ulpgc.moneycalulator.model.Currency;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class CurrencyManager {
     private List<Currency> currencies;

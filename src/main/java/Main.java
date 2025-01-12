@@ -5,7 +5,6 @@ import es.ulpgc.moneycalulator.io.TsvCurrencyLoader;
 import es.ulpgc.moneycalulator.io.TsvExchangeRateLoader;
 import es.ulpgc.moneycalulator.view.SwingMain;
 
-
 import java.io.File;
 
 public class Main {
